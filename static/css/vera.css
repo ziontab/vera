@@ -1,0 +1,62 @@
+body.main{
+  font-family: 'OpenSans-Light';
+  width: 1440px;
+  height: 1024px;
+}
+
+h1.main-head{
+  position: relative;
+  top: 40px;
+  right:4%;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 62px;
+  line-height: 84px;
+  text-align: center;
+}
+
+.main h1:first-letter{
+  color:#164BC1  
+}
+
+.main p{
+  position:relative;
+  left: 22.7%;
+  top: 40px;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 27px;
+  line-height: 42px;
+  text-align: center;
+
+  width: 640px;
+  height: 140px;
+}
+
+button.btn-vera.btn{
+  position:relative;
+  left: 35%;
+  top: 2px;
+  background-color: #8276F4;
+  border-radius: 8px;
+  width: 300px;
+  height:60px;
+  color: #fff;
+  font-size:24px;
+}
+
+img.zabota-img{
+  position:absolute;
+  bottom: 0px;
+  left: 300px;
+}
+
+@font-face {
+    font-family: 'OpenSans-Semibold'; /* Гарнитура шрифта */
+    src: url(../fonts/OpenSans-Semibold.ttf); /* Путь к файлу со шрифтом */
+}
+
+@font-face {
+    font-family: 'OpenSans-Light'; /* Гарнитура шрифта */
+    src: url(../fonts/OpenSans-Light.ttf); /* Путь к файлу со шрифтом */
+}
