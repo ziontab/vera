@@ -101,7 +101,8 @@ class EventsByDateView(LoginRequiredMixin, TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        date = datetime.date.fromisoformat(self.kwargs.get('date'))
+        date = self.kwargs.get('date').split('-')
+        date = datetime.date(year=int(date[0]), month=int(date[1]), day=int(date[2]))
         context['events'] = models.Event.objects.filter(
             nurse=self.request.user,
             date_planned__gte=date,
