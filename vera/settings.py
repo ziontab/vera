@@ -25,7 +25,7 @@ SECRET_KEY = 'xzx-f+b#d7yxdk*2i*5=6tvvs$v-%3nz&r9bx-iom65i)r$6ie'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -106,7 +106,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru-ru'
 
 TIME_ZONE = 'UTC'
 
@@ -127,3 +127,10 @@ STATICFILES_DIRS = [
 
 LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/'
+
+INCLUDE_SETTING_DEBUG = os.path.join(BASE_DIR, 'vera/local_settings.py')
+INCLUDE_SETTING_PRODUCTION = '/etc/vera/settings.py'
+if os.path.isfile(INCLUDE_SETTING_DEBUG):
+    exec(open(INCLUDE_SETTING_DEBUG).read())
+elif os.path.isfile(INCLUDE_SETTING_PRODUCTION):
+    exec(open(INCLUDE_SETTING_PRODUCTION).read())
