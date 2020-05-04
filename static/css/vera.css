@@ -46,11 +46,144 @@ a.btn.btn-vera {
     left: 30px;
 }
 
-/*img.zabota-img{*/
-/*    position:absolute;*/
-/*    bottom: 0px;*/
-/*    left: 300px;*/
-/*}*/
+.progress{
+  position: relative;
+  top: 150px;
+  left: 530px;
+  width: 290px;
+  height: 20px;
+  border-radius: 5px;
+}
+
+div.progress.vera{
+  border-radius: 10px;
+}
+
+div.progress-bar.vera{
+  background-color:#605EFE;
+  border-radius: 10px;
+}
+
+h3.signup{
+  position:relative;
+  top: 200px;
+  left: 625px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 30px;
+  color: #605EFE;
+}
+
+.forms{
+  width:205px;
+  height: 220px;
+}
+
+div.forms.forms_signup{
+  position:relative;
+  top: 270px;
+  left: 480px;
+}
+
+.forms input{
+   width:410px;
+   height: 70px;
+   margin-bottom: 30px;
+   background: #E9ECEF;
+   border-radius:15px;
+   color:#B8B8B8;
+   opacity:0.4;
+   padding-left: 20px;
+   border: 0px;
+   font-style: normal;
+   font-weight: 300;
+   font-size: 31px;
+   line-height: 42px;
+}
+
+button.btn-vera.btn.signup{
+  left: 39.5%;
+  top: 420px;
+  padding: 10px 25px;
+}
+
+h2.ward1{
+  position: relative;
+  top: 280px;
+  left: 490px;
+  font-size: 36px;
+  font-family: 'OpenSans-Bold';
+}
+
+div.roles{
+  position: relative;
+  top: 350px;
+  left: 410px;
+  height: 300px;
+  width: 600px;
+  text-align:center;
+}
+
+div.role{
+  position:relative;
+  width: 260px;
+  height: 370px;
+  border-radius: 15px;
+  display:inline-block;
+  margin-right: 30px;
+  color: #FFFFFF;
+
+}
+
+.relative{
+  background: #90ACFF;
+}
+
+.nurse{
+  background: #AF8EFF;
+}
+
+
+div.role h2{
+  position: relative;
+  top:280px;
+  font-size: 31px;
+
+}
+
+div.role h6{
+  position: relative;
+  top:285px;
+  font-size: 15px;
+}
+
+div.role img{
+  position:absolute;
+  left: 30px;
+  bottom: 120px;
+}
+
+div.sex{
+  height: 70px;
+  width: 420px;
+}
+
+div.sex input{
+  text-align:center;
+  width: 200px;
+  float: left;
+  padding-right: 20px;
+  margin-right: 10px;
+}
+
+button.ward{
+  position: relative;
+  top: 500px;
+  left: 590px;
+  font-size: 18px !important;
+  padding: 7px 50px;
+}
 
 @font-face {
     font-family: 'OpenSans-Semibold'; /* Гарнитура шрифта */
@@ -60,4 +193,9 @@ a.btn.btn-vera {
 @font-face {
     font-family: 'OpenSans-Light'; /* Гарнитура шрифта */
     src: url(/static/fonts/OpenSans-Light.ttf); /* Путь к файлу со шрифтом */
+}
+
+@font-face {
+    font-family: 'OpenSans-Bold'; /* Ð“Ð°Ñ€Ð½Ð¸Ñ‚ÑƒÑ€Ð° ÑˆÑ€Ð¸Ñ„Ñ‚Ð° */
+    src: url(../fonts/OpenSans-Bold.ttf); /* ÐŸÑƒÑ‚ÑŒ Ðº Ñ„Ð°Ð¹Ð»Ñƒ ÑÐ¾ ÑˆÑ€Ð¸Ñ„Ñ‚Ð¾Ð¼ */
 }
