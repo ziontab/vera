@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
-    signup.html
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_ul }}
+    <button>Продолжить</button>
+</form>
 {% endblock %}

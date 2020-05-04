@@ -1,11 +1,23 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
 <div class="container">
-    <ul>
-        {% for article in articles %}
-        <li>{{ article.title }} {{ article.text }}</li>
-        {% endfor %}
-    </ul>
+      <div class="main-icon">Z</div>
+      <div class="row">
+            <div class="col"></div>
+      </div>
+      <div class="row">
+            <div class="col"><h1 class="main-head">Zabota.me</h1></div>
+      </div>
+      <div class="row justify-content-center">
+            <div class="col-6 main-text">поможем вам осуществить правильный уход за больным человеком</div>
+      </div>
+      <div class="row justify-content-center">
+            <div class="col main-text"><a href="{% url 'signup' %}" class="btn btn-vera">Зарегистрироваться</a></div>
+      </div>
+      <div class="row">
+            <div class="col main-img"><img src="{% static 'img/main.png' %}"></div>
+      </div>
 </div>
 {% endblock %}
