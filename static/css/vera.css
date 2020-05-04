@@ -255,6 +255,180 @@ button.ward{
     padding: 7px 50px;
 }
 
+.homepage{
+  width: 1440px;
+  height: 2000px;
+  background: #F5F6FA;
+}
+
+.homepage h2{
+  position: relative;
+  top: 60px;
+  left: 135px;
+  font-family: 'OpenSans-Bold';
+  font-size: 53px;
+}
+
+.homepage p{
+  position: relative;
+  top: 60px;
+  left: 135px;
+  font-size: 32px;
+}
+
+div.homepage_menu{
+  position:relative;
+  bottom: 60px;
+  left: 940px;
+  height: 60px;
+}
+
+.homepage_menu ul {
+	list-style: none;
+}
+
+.homepage_menu ul li {
+  display: inline;
+  margin-right: 37px;
+}
+
+button.checkstate{
+  position: relative;
+  left: 135px;
+  top: 60px;
+  padding: 8px 30px;
+}
+
+.calendar{
+  position: absolute;
+  left: 135px;
+  top: 360px;
+  width: 1223px;
+  height: 840px;
+  background: #fff;
+}
+
+.calendar h2{
+  position: absolute;
+  left: 30px;
+  font-size:35px;
+}
+
+.calendar div.control{
+  position: absolute;
+  top: 50px;
+  width: 120px;
+  height: 50px; 
+  border: 1px solid #E5E5E5;
+  border-radius: 8px;
+  margin-left: 30px;
+}
+
+.calendar div.day{  
+  text-align:center;
+  right: 40px; 
+}
+
+.calendar div.day h4{  
+  position: absolute;
+  color: gray;
+  left: 17px;
+  top: 7px;
+  font-size: 22px;
+}
+
+.calendar div.move{
+  right: 190px;
+}
+
+.calendar div.move div{
+  width: 60px;
+  border-right: 3px solid #E5E5E5;
+}
+
+div.calendar-menu{
+  position:absolute;
+  top: 150px;
+  left:-10px;
+  height: 70px;
+  width: 1200px;
+}
+
+.calendar-menu ul {
+  list-style: none;  
+} 
+
+.calendar-menu ul li {
+  width: 165px;
+  height: 90px;
+ display: inline;
+ margin-right:0px;
+ float: left;
+ border-bottom: 1px solid #E5E5E5;
+ text-align:center;
+}
+
+.calendar-menu ul li:first-child{
+ border-bottom:4px solid #8276F4;
+}
+
+.calendar-menu ul li h6{
+  font-size:18px;
+  color: gray;
+}
+.calendar-menu ul li h3{
+  font-size:20px;
+}
+
+.calendar img{
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 260px;
+  left: 37px;
+}
+
+.calendar h3.addTask{
+  position: absolute;
+  top: 257px;
+  left: 94px;
+  font-size: 25px;
+}
+
+div.tasks{
+  position:absolute;
+  top: 400px;
+  left: 10px;
+  height: 60px;
+  width: 1170px;
+}
+
+.tasks ul {
+	list-style: none;
+}
+
+.tasks ul li{
+  border-top: 1px solid #E5E5E5;
+  height: 75px;
+}
+
+.tasks ul li input{
+  float:rigth;
+  width: 24px;
+  height: 50px;
+}
+
+.tasks ul li h2{  
+  font-size: 20px;
+}
+
+button.findnurse{
+  position: relative;
+  top: 1100px;
+  left: 280px;
+  padding: 8px 70px;
+}
+
 @font-face {
     font-family: 'OpenSans-Semibold';
     src: url(/static/fonts/OpenSans-Semibold.ttf);
