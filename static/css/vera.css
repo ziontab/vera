@@ -255,6 +255,67 @@ button.ward{
     padding: 7px 50px;
 }
 
+body.articles{
+  height: 1330px;
+  margin:0 auto;
+}
+
+.articles h2{
+  position: relative;
+  left: 97px;
+  top: 25px;
+  font-size: 48px;
+}
+
+.articles p{
+  position: relative;
+  left: 97px;
+  font-size: 24px;
+}
+
+.articles p.artclp1{
+  top: 55px;
+}
+
+.articles p.artclp2{
+  top: 140px;
+}
+
+.articles h3{
+  position: relative;
+  left: 97px;
+  top: 120px;
+  font-size: 34px;
+  color: #A8ABFF;
+}
+
+.articles img.artclimg1{
+  position:relative;
+  top: 220px;
+  left: 80px;
+}
+
+.articles img.artclimg2{
+  position:relative;
+  top: 592px;
+  left: -720px;
+}
+
+.articles h6{
+  position: relative;
+  left: 187px;
+  top: 333px;
+  font-size: 15px;
+  color: #C9CDD1;
+}
+
+.articles button{
+  position: relative;
+  top: 590px;
+  left: -120px;
+  padding: 5px 50px;
+}
+
 @font-face {
     font-family: 'OpenSans-Semibold';
     src: url(/static/fonts/OpenSans-Semibold.ttf);
