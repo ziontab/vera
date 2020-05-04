@@ -56,16 +56,24 @@ h1.main-head:first-letter {
     padding: 25px 48px;
 }
 
-.articles-container:nth-child(3n+1) {
+.articles-container:nth-child(3n) {
     background-color: rgba(217, 205, 241, 0.3);
 }
 
-.articles-container:nth-child(3n+2) {
+.articles-container:nth-child(3n+1) {
     background-color: rgba(144, 172, 254, 0.3);
 }
 
-.articles-container:nth-child(3n) {
+.articles-container:nth-child(3n+2) {
     background-color: rgba(226, 179, 255, 0.3);
+}
+
+.articles-buttons {
+    margin-bottom: 25px;
+}
+
+.articles-buttons a {
+    padding-right: 20px;
 }
 
 .article-tag {
@@ -83,14 +91,39 @@ h1.main-head:first-letter {
     font-size: 36px
 }
 
+.article-link a {
+    color: #A8ABFF;
+}
+
 .article-text {
     margin-bottom: 10px;
     font-weight: normal;
     font-size: 19px;
 }
 
+.article-img {
+    text-align: right;
+    line-height: 100%;
+    vertical-align: middle;
+}
+
+.article-img img {
+    margin-top: 40px;
+}
+
 .articles-pagination {
     margin-top: 30px;
+}
+
+.articles-search {
+    width: 693px;
+    height: 45px;
+
+    background: #FFF;
+    border-radius: 22px;
+    border-width: 0;
+    margin: 20px 0 50px;
+    padding: 15px;
 }
 
 .progress {
@@ -176,6 +209,30 @@ h3.signup{
     height: 150px;
 }
 
+.vera-header {
+    margin-top: 64px;
+}
+
+.vera-header a {
+    margin-right: 37px;
+}
+
+.vera-header a:last-child {
+    margin-right: 0;
+}
+
+.vera-header .header-greetings {
+    font-weight: bold;
+    font-size: 53px;
+    line-height: 72px;
+}
+
+.vera-header .header-text {
+    font-weight: normal;
+    font-size: 28px;
+    line-height: 44px;
+    margin-bottom: 50px;
+}
 
 .btn.btn-vera.signup {
     left: 39.5%;
@@ -253,6 +310,90 @@ button.ward{
     left: 590px;
     font-size: 18px !important;
     padding: 7px 50px;
+}
+
+.events {
+    background-color: #FFF;
+    margin-top: 50px;
+    padding: 30px;
+}
+
+.events-buttons {
+    padding-top: 20px;
+}
+
+.events-buttons button {
+    opacity: 0.6;
+}
+
+.events-menu {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.events-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.events-menu ul li {
+    width: 152px;
+    display: inline;
+    margin-right:0px;
+    float: left;
+    border-bottom: 1px solid #E5E5E5;
+    text-align:center;
+}
+
+.events-menu ul li.active{
+    border-bottom:4px solid #8276F4;
+}
+
+.events-menu ul li h6{
+    font-size: 18px;
+    color: gray;
+}
+.events-menu ul li h3{
+    font-size:20px;
+}
+
+.events-add {
+    margin-bottom: 20px;
+}
+.events-add h3 {
+    font-size: 25px;
+}
+
+.events-add img {
+    padding-right: 20px;
+}
+
+.events-tasks ul {
+	list-style: none;
+}
+
+.events-task {
+  border-bottom: 1px solid #E5E5E5;
+  height: 70px;
+}
+
+.events-task:last-child {
+  border-bottom: 0;
+}
+
+.events-task input{
+    width: 40px;
+    height: 60px;
+}
+
+.events-task h2{
+    font-size: 25px;
+    line-height: 57px;
+}
+
+.liked {
+    margin-top: 30px;
 }
 
 @font-face {

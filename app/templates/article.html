@@ -2,8 +2,23 @@
 
 {% block content %}
 <div class="container">
-    <ul>
-        <li>{{ object.title }} {{ object.text }}</li>
-    </ul>
-</div>
+    <div class="row vera-header justify-content-center">
+        {% for tag in object.tags.all %}
+            <a class="article-tag" href="{% url "articles_by_tag" tag.slug %}">#{{ tag.slug }}</a>
+        {% endfor %}
+    </div>
+    <div class="row vera-header justify-content-start">
+        <h2 class="main-head">{{ object.title }}</h2>
+    </div>
+    <div class="row vera-header justify-content-start">
+        {{ object.text|safe }}
+    </div>
+    <div class="row justify-content-center">
+        <div class="col main-text liked">
+            <a href="#">
+                {% csrf_token %}
+                <button class="btn btn-vera js-articles-like" data-id="{{ object.id }}">Добавить в избранное</button>
+            </a>
+        </div>
+    </div>
 {% endblock %}

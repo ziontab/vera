@@ -1,4 +1,8 @@
+import datetime
+
 from django import forms
+from django.http import JsonResponse
+from django.views.decorators.http import require_POST
 from django.views.generic import TemplateView
 from django.views.generic.edit import CreateView, UpdateView, FormView
 from django.views.generic.detail import DetailView
@@ -43,14 +47,33 @@ class WardAddView(LoginRequiredMixin, CreateView):
         form.fields['first_name'].widget = forms.TextInput(attrs={'placeholder': 'Имя подопечного'})
         form.fields['middle_name'].widget = forms.TextInput(attrs={'placeholder': 'Отчество подопечного'})
         form.fields['last_name'].widget = forms.TextInput(attrs={'placeholder': 'Фамилия подопечного'})
-        form.fields['birthday'].widget = forms.TextInput(attrs={'placeholder': 'Дата рождения'})
+        form.fields['birthday'].widget = forms.TextInput(attrs={'placeholder': 'Дата рождения ГГГГ-ММ-ДД'})
         form.fields['address'].widget = forms.TextInput(attrs={'placeholder': 'Адрес'})
         form.fields['phone'].widget = forms.TextInput(attrs={'placeholder': 'Телефон'})
         return form
 
     def form_valid(self, form):
         form.instance.nurse = self.request.user
-        return super().form_valid(form)
+        response = super().form_valid(form)
+        models.Event.objects.create(
+            nurse=self.request.user,
+            ward=self.object,
+            date_planned=datetime.datetime.now(),
+            title='Гигиена лица и полости рта',
+        )
+        models.Event.objects.create(
+            nurse=self.request.user,
+            ward=self.object,
+            date_planned=datetime.datetime.now(),
+            title='Приём лекарства',
+        )
+        models.Event.objects.create(
+            nurse=self.request.user,
+            ward=self.object,
+            date_planned=datetime.datetime.now() + datetime.timedelta(days=1),
+            title='Приём пищи',
+        )
+        return response
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -63,7 +86,30 @@ class EventsView(LoginRequiredMixin, TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['events'] = models.Event.objects.filter(nurse=self.request.user).order_by('date_planned')
+        context['events'] = models.Event.objects.filter(
+            nurse=self.request.user,
+            date_planned__gte=datetime.date.today(),
+            date_planned__lte=datetime.date.today() + datetime.timedelta(days=1),
+            is_complete=False,
+        ).order_by('date_planned')
+        context['today'] = datetime.date.today().strftime('%D')
+        context['days'] = create_days()
+        return context
+
+class EventsByDateView(LoginRequiredMixin, TemplateView):
+    template_name = "events.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        date = datetime.date.fromisoformat(self.kwargs.get('date'))
+        context['events'] = models.Event.objects.filter(
+            nurse=self.request.user,
+            date_planned__gte=date,
+            date_planned__lte=date + datetime.timedelta(days=1),
+            is_complete=False,
+        ).order_by('date_planned')
+        context['today'] = datetime.date.today().strftime('%D')
+        context['days'] = create_days(date)
         return context
 
 
@@ -162,3 +208,44 @@ class RoleView(LoginRequiredMixin, UpdateView):
     def form_valid(self, form):
         form.instance.nurse = self.request.user
         return super().form_valid(form)
+
+
+@require_POST
+def event_complete(request):
+    event = models.Event.objects.filter(
+        pk=request.POST.get('id'),
+        nurse=request.user,
+    ).first()
+    if event:
+        event.date_close = datetime.datetime.now()
+        event.is_complete = True
+        event.save()
+    return JsonResponse({"status": "ok"})
+
+
+@require_POST
+def articles_like(request):
+    article = models.Article.objects.filter(
+        pk=request.POST.get('id'),
+    ).first()
+    if article:
+        models.Like.objects.get_or_create(nurse=request.user, article=article)
+    return JsonResponse({"status": "ok"})
+
+
+def create_days(date=None):
+    if not date:
+        date = datetime.date.today()
+    start = datetime.date.today()
+    result = []
+    for x in range(7):
+        result.append({
+            "date": start.isoformat(),
+            "name": start.strftime('%a'),
+            "active": True if start == date else False,
+            "number": start.day,
+        })
+        start = start + datetime.timedelta(days=1)
+    return result
+
+

@@ -1,11 +1,81 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
 <div class="container">
-    <ul>
-        {% for event in events %}
-        <li>{{ event.title }} {{ event.text }}</li>
-        {% endfor %}
-    </ul>
+    <div class="row vera-header justify-content-end">
+        <div class="col-8">
+            <h1 class="header-greetings">Привет, {{ request.user.first_name }}</h1>
+            <div class="header-text">Как ваша мама чувствует себя сегодня?</div>
+        </div>
+        <div class="col-4">
+            <a href="{% url "events" %}">
+                <img src="{% static "img/home" %}{% if request.path == '/events/' %}_active{% endif %}.svg">
+            </a>
+            <a href="{% url "articles" %}">
+                <img src="{% static "img/articles" %}{% if request.path == '/articles/' %}_active{% endif %}.svg">
+            </a>
+            <a href="#">
+                <img src="{% static "img/profile.svg" %}">
+            </a>
+            <a href="#">
+                <img src="{% static "img/help.svg" %}">
+            </a>
+        </div>
+    </div>
+    <div class="row justify-content-start">
+        <div class="col">
+            <a href="#">
+                <button class="btn btn-vera">Проверить состояние</button>
+            </a>
+        </div>
+    </div>
+
+    <div class="row justify-content-start">
+        <div class="col">
+            <div class="events">
+                <div class="row events-buttons">
+                    <div class="col-9"><h2>Сегодня {{ today }}</h2></div>
+                    <div class="col-3">
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                          <button type="button" class="btn btn-secondary">&lt;</button>
+                          <button type="button" class="btn btn-secondary">&gt</button>
+                        </div>
+                        <a href="{% url "events" %}"><button type="button" class="btn btn-outline-secondary">Сегодня</button></a>
+                    </div>
+                </div>
+                <div class="row events-menu">
+                    <ul>
+                        {% for day in days %}
+                        <a href="{% url "events_by_date" day.date %}"><li class="{% if day.active %}active{% endif %}">
+                            <h6>{{ day.name }}</h6>
+                            <h3>{{ day.number }}</h3>
+                            <div class="round"></div>
+                        </li></a>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="row events-add">
+                    <div class="col">
+                        <h3><img src="{% static "img/add.svg" %}" alt="">Добавить задачу</h3>
+                    </div>
+                </div>
+                {% csrf_token %}
+                {% for event in events %}
+                    <div class="row events-task js-event-complete" data-id="{{ event.id }}">
+                        <input type="radio" name="option1">
+                        <h2>{{ event.output_text }}</h2>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col main-text">
+            <a href="#">
+                <button  class="btn btn-vera">Найти сиделку</button>
+            </a>
+        </div>
+    </div>
 </div>
 {% endblock %}

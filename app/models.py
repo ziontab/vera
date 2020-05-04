@@ -62,8 +62,8 @@ class Ward(models.Model):
     STATUS_BED = 'B'
     STATUSES = (
         (STATUS_WALKING, 'Ходячий'),
-        (STATUS_SITING, 'Сидящий'),
-        (STATUS_BED, 'Лежащий'),
+        (STATUS_SITING, 'Сидячий'),
+        (STATUS_BED, 'Лежачий'),
     )
 
     first_name = models.CharField(max_length=256, verbose_name='Имя')
@@ -95,11 +95,11 @@ class ArticleManager(models.Manager):
         return self.all()
 
     def read(self, nurse):
-        read_ids = Read.objects.filter(nurse=nurse).values_list('id', flat=True)
-        return self.filter(pk__in=read_ids).order_by("-id")
+        read_ids = Read.objects.filter(nurse=nurse).values_list('article_id', flat=True)
+        return self.filter(pk__in=list(read_ids)).order_by("-id")
 
     def liked(self, nurse):
-        liked_ids = Like.objects.filter(nurse=nurse).values_list('id', flat=True)
+        liked_ids = Like.objects.filter(nurse=nurse).values_list('article_id', flat=True)
         return self.filter(pk__in=liked_ids).order_by("-id")
 
     def by_tag(self, tag):
@@ -179,6 +179,9 @@ class Event(models.Model):
     is_complete = models.BooleanField(verbose_name='Завершено', blank=True, default=False)
 
     def __str__(self):
+        return self.title
+
+    def output_text(self):
         return self.title
 
     class Meta:
