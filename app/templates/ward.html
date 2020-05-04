@@ -1,9 +1,33 @@
-{% extends "base.html" %}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-{% block content %}
-<form method="POST">
-    {% csrf_token %}
-    {{ form.as_ul }}
-    <button>Готово</button>
-</form>
-{% endblock %}
+    <!-- Bootstrap CSS -->
+    <!--<link rel="stylesheet" href="../../static/css/bootstrap.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="../../static/css/vera.css">
+    <link rel="stylesheet" href="../../static/css/bootstrap.min.css">
+    <title>Signup</title>
+  </head>
+  <body class="main">
+    <div class="progress vera">
+      <div class="progress-bar vera" role="progressbar" style="width: 60%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    <h3 class="signup">ШАГ 2 / 3</h3>
+    <h2 class="ward1">Какова ваша роль?</h2>
+    <div class="roles">
+      <div class="role relative">
+        <h2>Родственник</h2>
+        <h6>Один больной</h6>
+        <img src="../../static/images/Group 9.svg" alt="" class="ward-img">
+      </div>
+      <div class="role nurse">
+        <h2>Сиделка</h2>
+        <h6>Несколько подопечных</h6>
+        <img src="../../static/images/Group 8.svg" alt="" class="ward-img">
+      </div>
+      <div></div>
+    </div>
+  </body>
+</html>
