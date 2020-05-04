@@ -126,7 +126,7 @@ STATICFILES_DIRS = [
 ]
 
 LOGIN_URL = '/login/'
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/events/'
 
 INCLUDE_SETTING_DEBUG = os.path.join(BASE_DIR, 'vera/local_settings.py')
 INCLUDE_SETTING_PRODUCTION = '/etc/vera/settings.py'

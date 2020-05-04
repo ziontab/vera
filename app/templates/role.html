@@ -1,10 +1,37 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
-<form method="POST">
+<form method="POST" class="container vera-form">
+    <div class="row justify-content-center">
+        <div class="progress vera">
+            <div class="progress-bar vera" role="progressbar" style="width: 60%" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <h3 class="signup">ШАГ 2 / 3</h3>
+    </div>
+    <div class="row justify-content-center">
+        <h2 class="role-text">Какова ваша роль?</h2>
+    </div>
+    <div class="row justify-content-center">
+        <div class="roles">
+            <button name="role" value="R">
+                <div class="role relative">
+                    <h2>Родственник</h2>
+                    <h6>Один больной</h6>
+                    <img src="{% static 'img/pro.svg' %}" alt="" class="ward-img">
+                </div>
+            </button>
+            <button name="role" value="P">
+                <div class="role nurse">
+                    <h2>Сиделка</h2>
+                    <h6>Несколько подопечных</h6>
+                    <img src="{% static 'img/relative.svg' %}" alt="" class="ward-img">
+                </div>
+            </button>
+        </div>
+    </div>
     {% csrf_token %}
-    <input type="hidden" name="role" value="P">
-    <input type="hidden" name="role" value="R">
-    <button>OK</button>
 </form>
 {% endblock %}

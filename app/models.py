@@ -70,7 +70,7 @@ class Ward(models.Model):
     middle_name = models.CharField(max_length=256, verbose_name='Отчество')
     last_name = models.CharField(max_length=256, verbose_name='Фамилия')
     birthday = models.DateField(verbose_name='Дата рождения')
-    sex = models.CharField(max_length=1, choices=SEXES, verbose_name='Пол')
+    sex = models.CharField(max_length=1, choices=SEXES, verbose_name='Пол', default=SEX_MALE)
     address = models.CharField(max_length=1024, verbose_name='Адрес')
     phone = models.CharField(max_length=1024, verbose_name='Телефон')
     status = models.CharField(max_length=1, choices=STATUSES, verbose_name='Статус', default=STATUS_WALKING)

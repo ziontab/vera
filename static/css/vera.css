@@ -1,5 +1,7 @@
 body {
     font-family: 'OpenSans-Light';
+    background: linear-gradient(180deg, #F5F6FA 0%, #FFFFFF 100%);
+    background-repeat: no-repeat;
 }
 
 h1.main-head {
@@ -24,7 +26,7 @@ h1.main-head:first-letter {
     margin-bottom: 50px;
 }
 
-a.btn.btn-vera {
+.btn.btn-vera {
     background-color: #8276F4;
     border-radius: 8px;
     width: 300px;
@@ -35,6 +37,7 @@ a.btn.btn-vera {
 
 .main-img {
     text-align: center;
+    mix-blend-mode: multiply;
 }
 
 .main-icon {
@@ -46,18 +49,223 @@ a.btn.btn-vera {
     left: 30px;
 }
 
-/*img.zabota-img{*/
-/*    position:absolute;*/
-/*    bottom: 0px;*/
-/*    left: 300px;*/
-/*}*/
+.articles-container {
+    background-color: rgba(217, 205, 241, 0.3);
+    border-radius: 15px;
+    margin-bottom: 21px;
+    padding: 25px 48px;
+}
 
-@font-face {
-    font-family: 'OpenSans-Semibold'; /* Гарнитура шрифта */
-    src: url(/static/fonts/OpenSans-Semibold.ttf); /* Путь к файлу со шрифтом */
+.articles-container:nth-child(3n+1) {
+    background-color: rgba(217, 205, 241, 0.3);
+}
+
+.articles-container:nth-child(3n+2) {
+    background-color: rgba(144, 172, 254, 0.3);
+}
+
+.articles-container:nth-child(3n) {
+    background-color: rgba(226, 179, 255, 0.3);
+}
+
+.article-tag {
+    padding-right: 10px;
+    color: #B8B8B8;
+}
+
+.article-title {
+    margin-bottom: 10px;
+}
+
+.article-title a {
+    color:#000000;
+    font-weight: 600;
+    font-size: 36px
+}
+
+.article-text {
+    margin-bottom: 10px;
+    font-weight: normal;
+    font-size: 19px;
+}
+
+.articles-pagination {
+    margin-top: 30px;
+}
+
+.progress {
+    width: 290px;
+    height: 20px;
+    border-radius: 5px;
+}
+
+div.progress.vera {
+    border-radius: 10px;
+}
+
+div.progress-bar.vera{
+    background-color:#605EFE;
+    border-radius: 10px;
+}
+
+h3.signup{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 30px;
+    color: #605EFE;
+}
+
+.vera-form {
+    margin-top: 87px;
+}
+
+.vera-form .signup {
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.vera-form .row {
+    position: relative;
+}
+
+.vera-form .form-error {
+    margin-top: .25rem;
+    color: #dc3545;
+    position: absolute;
+    top: 76px;
+}
+
+.vera-form ::placeholder {
+    color: #b8b8b8;
+}
+
+.vera-form input {
+    width:410px;
+    height: 70px;
+    margin-bottom: 40px;
+    background: #E9ECEF;
+    border-radius:15px;
+    color: #777;
+    opacity:0.6;
+    padding-left: 20px;
+    border: 0px;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 31px;
+    line-height: 42px;
+}
+
+.vera-form select {
+    width:410px;
+    height: 70px;
+    margin-bottom: 40px;
+    background: #E9ECEF;
+    border-radius:15px;
+    color: #777;
+    opacity:0.6;
+    padding-left: 20px;
+    border: 0px;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 31px;
+    line-height: 42px;
+}
+
+.vera-form select[multiple] {
+    height: 150px;
+}
+
+
+.btn.btn-vera.signup {
+    left: 39.5%;
+    top: 420px;
+    padding: 10px 25px;
+}
+
+h2.role-text {
+    font-size: 36px;
+    font-family: 'OpenSans-Bold';
+    margin-bottom: 40px;
+}
+
+div.roles {
+    text-align:center;
+}
+
+div.roles button {
+    border: 0;
+    margin: 0 15px;
+}
+
+div.role {
+    position: relative;
+    width: 260px;
+    height: 370px;
+    border-radius: 15px;
+    display:inline-block;
+    color: #FFFFFF;
+}
+
+.relative{
+    background: #90ACFF;
+}
+
+.nurse{
+    background: #AF8EFF;
+}
+
+
+div.role h2{
+    position: relative;
+    top:280px;
+    font-size: 31px;
+}
+
+div.role h6{
+    position: relative;
+    top:285px;
+    font-size: 15px;
+}
+
+div.role img{
+    position:absolute;
+    left: 30px;
+    bottom: 120px;
+}
+
+div.sex{
+    height: 70px;
+    width: 420px;
+}
+
+div.sex input{
+    text-align:center;
+    width: 200px;
+    float: left;
+    padding-right: 20px;
+    margin-right: 10px;
+}
+
+button.ward{
+    position: relative;
+    top: 500px;
+    left: 590px;
+    font-size: 18px !important;
+    padding: 7px 50px;
 }
 
 @font-face {
-    font-family: 'OpenSans-Light'; /* Гарнитура шрифта */
-    src: url(/static/fonts/OpenSans-Light.ttf); /* Путь к файлу со шрифтом */
+    font-family: 'OpenSans-Semibold';
+    src: url(/static/fonts/OpenSans-Semibold.ttf);
+}
+
+@font-face {
+    font-family: 'OpenSans-Light';
+    src: url(/static/fonts/OpenSans-Light.ttf);
+}
+
+@font-face {
+    font-family: 'OpenSans-Bold';
+    src: url(/static/fonts/OpenSans-Bold.ttf);
 }

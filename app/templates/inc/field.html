@@ -1,0 +1,6 @@
+<div class="row justify-content-center">
+    {{ field }}
+    {% for error in field.errors %}
+        <div class="form-error">{{ error }}</div>
+    {% endfor %}
+</div>
