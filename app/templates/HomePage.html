@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" language="javascript">
+      var liArray =new Array('li1', 'li2', 'li3', 'li4', 'li5', 'li6', 'li7');
+
+      function clickCalendar(id){
+        var liClicked = document.getElementById(id);
+        for (var i = 0; i < 7; i++){
+          liChecked = document.getElementById(liArray[i]);
+          liChecked.style.borderColor = '#E5E5E5';
+          liChecked.style.borderWidth = '1px';
+        }
+        liClicked.style.borderColor = '#8276F4';
+        liClicked.style.borderWidth = '4px';
+      /*  for (int i = 0; i < 7; i++){
+          //  liChecked = document.getElementById(liArray[i]);
+          //console.log(liArray[i]);
+          liChecked = document.getElementById(liArray[i]);
+          if (liChecked.style.borderColor == red){
+            liChecked.style.borderColor = red;
+            break;
+          }
+        }
+      //  liClicked.style.borderColor = red;*/
+      }
+    </script>
+    <!-- Bootstrap CSS -->
+    <!--<link rel="stylesheet" href="../../static/css/bootstrap.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="../../static/css/vera.css">
+    <link rel="stylesheet" href="../../static/css/bootstrap.min.css">
+    <title>Home page</title>
+  </head>
+  <body class="main homepage">
+      <h2 class="main-head">Привет, Елизавета</h2>
+      <p>Как ваша мама чувствует себя сегодня?</p>
+      <div class="homepage_menu">
+        <ul>
+          <li>
+            <img src="../../static/images/Group 35.svg" alt="" class="zabota-img">
+          </li>
+          <li>
+            <img src="../../static/images/Group 12.svg" alt="" class="zabota-img">
+          </li>
+          <li>
+            <img src="../../static/images/Group 32.svg" alt="" class="zabota-img">
+          </li>
+          <li>
+            <img src="../../static/images/Group 33.svg" alt="" class="zabota-img">
+          </li>
+        </ul>
+      </div>
+      <button class="btn btn-vera checkstate">Проверить состояние</button>
+      <div class="calendar">
+        <h2>Сегодня 4 Мая</h2>
+        <div class="control move">
+          <div></div>
+          <div></div>
+        </div>
+        <div class="control day">
+          <h4>Сегодня</h4>
+        </div>
+        <div class="calendar-menu">
+          <ul>
+            <li id="li1" onclick="clickCalendar('li1')">
+              <h6>Пн.</h6>
+              <h3>4</h3>
+              <div class="round"></div>
+            </li>
+            <li id="li2" onclick="clickCalendar('li2')">
+              <h6>Пн.</h6>
+              <h3>4</h3>
+              <div class="round" ></div>
+            </li>
+            <li id="li3" onclick="clickCalendar('li3')">
+              <h6>Пн.</h6>
+              <h3>4</h3>
+              <div class="round"></div>
+            </li>
+            <li id="li4" onclick="clickCalendar('li4')">
+              <h6>Пн.</h6>
+              <h3>4</h3>
+              <div class="round"></div>
+            </li>
+            <li id="li5" onclick="clickCalendar('li5')">
+              <h6>Пн.</h6>
+              <h3>4</h3>
+              <div class="round"></div>
+            </li>
+            <li id="li6" onclick="clickCalendar('li6')">
+              <h6>Пн.</h6>
+              <h3>4</h3>
+              <div class="round"></div>
+            </li>
+            <li id="li7" onclick="clickCalendar('li7')">
+              <h6>Пн.</h6>
+              <h3>4</h3>
+              <div class="round"></div>
+            </li>
+          </ul>
+        </div>
+        <img src="../../static/images/add.png" alt="" class="cross">
+        <h3 class="addTask">Добавить задачу</h3>
+        <div class="tasks">
+          <ul>
+            <li>
+              <input type="radio" name="option1">
+              <h2>Проверить состояние</h2>
+            </li>
+            <li>
+              <input type="radio" name="option1">
+              <h2>10:30 Принять лекарство</h2>
+            </li>
+            <li>
+              <input type="radio" name="option1">
+              <h2>13:00 Санация</h2>
+            </li>
+            <li>
+              <input type="radio" name="option1">
+              <h2>15:00 Визит врача</h2>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <button class="btn btn-vera findnurse">Найти сиделку</button>
+  </body>
+</html>
